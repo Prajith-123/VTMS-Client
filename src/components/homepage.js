@@ -10,7 +10,7 @@ const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/statistics')
+    fetch('https://trackingserver.onrender.com/api/statistics')
       .then((response) => response.json())
       .then((data) => {
         setVisitorsToday(data.today);

@@ -19,7 +19,7 @@ const GenerateReport = () => {
   const handleGenerateReport = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/reports?start=${startDate}&end=${endDate}`
+        `https://trackingserver.onrender.com/api/reports?start=${startDate}&end=${endDate}`
       );
       setReportData(response.data);
       setIsReportGenerated(true);

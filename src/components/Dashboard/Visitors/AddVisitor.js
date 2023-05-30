@@ -76,7 +76,7 @@ const AddVisitor = () => {
     formData.append('photo', photo);
 
     try {
-      await axios.post('http://localhost:5000/api/visitors/add-visitor', formData, {
+      await axios.post('https://trackingserver.onrender.com/api/visitors/add-visitor', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

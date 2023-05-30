@@ -12,7 +12,7 @@ const PasswordRecovery = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/recover-password', { email });
+      const response = await axios.post('https://trackingserver.onrender.com/api/auth/recover-password', { email });
       console.log(response.data);
       toast.success('Password recovery instructions sent to your email');
     } catch (error) {

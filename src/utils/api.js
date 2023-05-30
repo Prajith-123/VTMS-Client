@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'https://trackingserver.onrender.com';
 
 export const setAuthToken = (token) => {
   if (token) {

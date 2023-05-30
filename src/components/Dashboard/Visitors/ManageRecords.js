@@ -62,7 +62,7 @@ const ManageRecords = () => {
 
   const fetchVisitors = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/visitors');
+      const response = await axios.get('https://trackingserver.onrender.com/api/visitors');
       setVisitors(response.data);
     } catch (error) {
       toast.error('Error occurred while fetching visitors');
@@ -71,7 +71,7 @@ const ManageRecords = () => {
 
   const handleCheckOut = async (visitorId) => {
     try {
-      await axios.put(`http://localhost:5000/api/visitors/${visitorId}/checkout`);
+      await axios.put(`https://trackingserver.onrender.com/api/visitors/${visitorId}/checkout`);
       fetchVisitors();
       toast.success('Visitor Checkout successful');
     } catch (error) {
@@ -81,7 +81,7 @@ const ManageRecords = () => {
 
   const handleDelete = async (visitorId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/visitors/${visitorId}`);
+      await axios.delete(`https://trackingserver.onrender.com/api/visitors/${visitorId}`);
       fetchVisitors();
       toast.success('Visitor deleted successfully');
     } catch (error) {
@@ -120,11 +120,11 @@ const ManageRecords = () => {
       if (selectedFile) {
         const formData = new FormData();
         formData.append('photo', selectedFile);
-        await axios.put(`http://localhost:5000/api/visitors/${visitorId}/photo`, formData, {
+        await axios.put(`https://trackingserver.onrender.com/api/visitors/${visitorId}/photo`, formData, {
           headers: { 'Content-Type': 'multipart/form-data' },
         });
       }
-      await axios.put(`http://localhost:5000/api/visitors/${visitorId}`, {
+      await axios.put(`https://trackingserver.onrender.com/api/visitors/${visitorId}`, {
         name: formData.name,
         phone: formData.phone,
         email: formData.email,

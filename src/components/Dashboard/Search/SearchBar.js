@@ -25,7 +25,7 @@ const SearchBar = () => {
       }
 
       try {
-        const response = await axios.get(`http://localhost:5000/api/search?q=${searchQuery}`);
+        const response = await axios.get(`https://trackingserver.onrender.com/api/search?q=${searchQuery}`);
         setSearchResults(response.data.results);
 
         if (response.data.results.length === 0) {
